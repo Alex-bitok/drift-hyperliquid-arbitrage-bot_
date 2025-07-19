@@ -1,0 +1,45 @@
+# Main arbitrage bot parameters
+# This is an example config. DO NOT store any real keys here.
+# All secrets must be set via environment variables.
+
+strategies:
+  basis: true
+  funding: true
+
+mode: dry-run            # [live, dry-run]
+market: "SOL-PERP"       # common market identifier for logs
+amount: 1.0              # position size in base asset
+leverage: 3              # leverage if supported by both protocols
+max_slippage_bps: 10     # maximum allowed slippage (bps)
+min_profit_usd: 1.0      # minimum profit to enter a trade (USD)
+hold_time_sec: 3600      # holding time for funding arbitrage (sec)
+poll_interval_sec: 1     # how often to poll exchange data (sec)
+
+drift:
+  private_key: "${DRIFT_PRIVATE_KEY}"        # set via env, never commit!
+  rpc_url: "https://mainnet.helius-rpc.com/?api-key=${DRIFT_RPC_KEY}"
+  ws_url: "wss://mainnet.helius-rpc.com/?api-key=${DRIFT_RPC_KEY}"
+  sub_account_id: 0
+  market: "SOL-PERP"
+  dlob_url: "https://dlob.drift.trade"
+
+hyperliquid:
+  api_key: "${HYPERLIQUID_API_KEY}"           # set via env, never commit!
+  api_secret: "${HYPERLIQUID_API_SECRET}"     # set via env, never commit!
+  account_address: "${HYPERLIQUID_ACCOUNT_ADDRESS}"   # set via env
+  api_url: "https://api.hyperliquid.xyz"
+  market: "SOL"
+
+fees:
+  drift: 0.0008         # 8 bps (taker)
+  hyperliquid: 0.0007   # 7 bps (taker)
+
+logging:
+  level: INFO           # [DEBUG, INFO, WARNING, ERROR]
+  log_file: logs/bot.log
+
+safe_mode: false        # enable or disable failover mode
+
+timeouts:
+  order_submit_sec: 10
+  order_cancel_sec: 5

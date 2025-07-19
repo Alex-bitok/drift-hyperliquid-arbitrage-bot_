@@ -1,0 +1,19 @@
+# Core dependencies
+# Drift and Hyperliquid connectors
+driftpy==0.8.63
+solders==0.26.0
+solana==0.36.6
+hyperliquid-python-sdk
+
+# Configuration and utilities
+pydantic==2.11.0
+PyYAML==6.0.2
+
+# Runtime requirements
+numpy>=1.26,<2.0
+certifi
+eth-account
+
+# Development
+pytest>=8.0
+pytest-asyncio>=0.23
