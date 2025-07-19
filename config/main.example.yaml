@@ -17,8 +17,8 @@ poll_interval_sec: 1     # how often to poll exchange data (sec)
 
 drift:
   private_key: "${DRIFT_PRIVATE_KEY}"        # set via env, never commit!
-  rpc_url: "https://mainnet.helius-rpc.com/?api-key=${DRIFT_RPC_KEY}"
-  ws_url: "wss://mainnet.helius-rpc.com/?api-key=${DRIFT_RPC_KEY}"
+  rpc_url: "${DRIFT_RPC_URL}"
+  ws_url: "${DRIFT_WS_URL}"
   sub_account_id: 0
   market: "SOL-PERP"
   dlob_url: "https://dlob.drift.trade"
