@@ -67,7 +67,7 @@ class FundingStrategy(ArbitrageStrategyBase):
         funding_drift = await self.drift.fetch_funding(self.drift_symbol)
         funding_hyper = await self.hyper.fetch_funding(self.hyper_symbol)
         rate_drift_raw = funding_drift.get("last_funding_rate") or funding_drift.get("funding_rate", 0)
-        rate_drift = float(rate_drift_raw) / 1e9  # Drift: нормализация согласно документации
+        rate_drift = float(rate_drift_raw) / 1e9  # Drift
         
         rate_hyper = float(
             funding_hyper.get("funding_rate")
