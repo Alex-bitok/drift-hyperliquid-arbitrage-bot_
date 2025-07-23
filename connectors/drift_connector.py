@@ -204,7 +204,7 @@ class DriftConnector(ConnectorBase):
             else PRICE_PRECISION
         )
         order = OrderParams(
-            order_type=OrderType.MARKET,  # <-- driftpy==0.8.63, Enum без скобок
+            order_type=OrderType.MARKET,  # <-- driftpy==0.8.63, Enum 
             base_asset_amount=int(amount * base_prec),
             market_index=idx,
             direction=direction,
